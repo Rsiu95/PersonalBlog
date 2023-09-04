@@ -126,7 +126,7 @@ def register():
         
         # Use Werkzeug to hash the user's password when creating a new user.
         temp_password = request.form.get('password')
-        hashed_password = generate_password_hash(temp_password, method="pbkdf2", salt_length=16)
+        hashed_password = generate_password_hash(temp_password, salt_length=16)
         
         # Create new user
         new_user = User(

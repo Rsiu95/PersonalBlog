@@ -10,12 +10,12 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from sqlalchemy.orm import relationship
 from sqlalchemy import ForeignKey
 import smtplib, os
-from dotenv import load_dotenv
+
 # Import your forms from the forms.py
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 
 # Environment Variables
-load_dotenv()
+
 MY_EMAIL = os.getenv("EMAIL")
 MY_PASSWORD = os.getenv("PASSWORD")
 SECRET_KEY = os.getenv("SECRET_KEY")

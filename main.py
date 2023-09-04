@@ -38,11 +38,11 @@ db.init_app(app)
 class User(UserMixin, db.Model):
     __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True)
-    first_name = db.Column(db.String(1000))
-    last_name = db.Column(db.String(1000))
-    username = db.Column(db.String(1000), unique=True)
-    email = db.Column(db.String(1000), unique=True)
-    password = db.Column(db.String(1000))
+    first_name = db.Column(db.String(250))
+    last_name = db.Column(db.String(250))
+    username = db.Column(db.String(250), unique=True)
+    email = db.Column(db.String(250), unique=True)
+    password = db.Column(db.String(250))
     
     # Create relationship between comments and blogposts for user ids that create posts
     posts = relationship("BlogPost", back_populates="author")

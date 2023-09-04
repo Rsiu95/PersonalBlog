@@ -42,7 +42,7 @@ class User(UserMixin, db.Model):
     last_name = db.Column(db.String(1000))
     username = db.Column(db.String(100), unique=True)
     email = db.Column(db.String(100), unique=True)
-    password = db.Column(db.String(100))
+    password = db.Column(db.String(300))
     
     # Create relationship between comments and blogposts for user ids that create posts
     posts = relationship("BlogPost", back_populates="author")
